@@ -6,13 +6,7 @@ on:
     types: [labeled]
   
 jobs:
- build:
+  build:
    runs-on: ubuntu-latest
    
    if: contains(github.event.pull_request.labels.*.name, 'stage')
-   
-   steps:  
-      - name: "Login via Azure CLI"
-        uses: azure/login@v1
-        with:
-          creds: ${{ secrets.AZURE_CREDENTIALS }}
