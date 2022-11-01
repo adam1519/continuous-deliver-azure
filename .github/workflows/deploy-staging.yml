@@ -10,7 +10,8 @@ jobs:
    runs-on: ubuntu-latest
    
    if: contains(github.event.pull_request.labels.*.name, 'stage')
-Deploy-to-Azure:
+   
+  Deploy-to-Azure:
     runs-on: ubuntu-latest
     needs: Build-Docker-Image
     name: Deploy app container to Azure
